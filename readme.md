@@ -1,6 +1,6 @@
 # Numpy Katas
 
-Exercises to sharp scientific computations with Numpy knowledge.
+Exercises to sharp scientific computations with Numpy.
 
 ## References
 
