@@ -5,14 +5,15 @@ class LinearRegression:
     """
     Implementation of linear regression in pure Numpy
     """
+
     coefficients: np.ndarray
 
     def fit(
-            self,
-            samples: np.ndarray,
-            targets: np.ndarray,
-            learning_rate: float = 0.01,
-            epochs: int = 1500,
+        self,
+        samples: np.ndarray,
+        targets: np.ndarray,
+        learning_rate: float = 0.01,
+        epochs: int = 1500,
     ) -> np.array:
         samples = self.augment_intercept(samples)
         targets = targets[:, np.newaxis]
@@ -23,7 +24,9 @@ class LinearRegression:
         training_history: np.ndarray = np.zeros((epochs, 1))
 
         for epoch_idx in range(epochs):
-            self.coefficients -= learning_rate * self.get_cost_derivative(samples, targets)
+            self.coefficients -= learning_rate * self.get_cost_derivative(
+                samples, targets
+            )
 
             training_history[epoch_idx] = self.get_cost(
                 samples @ self.coefficients,
@@ -40,10 +43,12 @@ class LinearRegression:
     def augment_intercept(self, samples: np.ndarray):
         num_features: int = samples.shape[0]
 
-        return np.hstack((
-            np.ones((num_features, 1)),
-            samples,
-        ))
+        return np.hstack(
+            (
+                np.ones((num_features, 1)),
+                samples,
+            )
+        )
 
     def get_cost(self, targets: np.ndarray, predictions: np.ndarray) -> float:
         return (1 / (2 * targets.size)) * np.sum((predictions - targets) ** 2)
