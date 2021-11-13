@@ -3,10 +3,11 @@ import numpy as np
 
 class LinearRegression:
     """
-    Implementation of linear regression in pure Numpy
+    Implementation of linear regression with SGD optimization
     """
 
-    coefficients: np.ndarray
+    def __init__(self):
+        self.coefficients: np.ndarray = np.array([])
 
     def fit(
         self,
@@ -14,12 +15,12 @@ class LinearRegression:
         targets: np.ndarray,
         learning_rate: float = 0.01,
         epochs: int = 1500,
-    ) -> np.array:
+    ) -> np.ndarray:
         samples = self.augment_intercept(samples)
         targets = targets[:, np.newaxis]
 
         num_features: int = samples.shape[1]
-        self.coefficients: np.ndarray = np.ones((num_features, 1))
+        self.coefficients = np.ones((num_features, 1))
 
         training_history: np.ndarray = np.zeros((epochs, 1))
 
