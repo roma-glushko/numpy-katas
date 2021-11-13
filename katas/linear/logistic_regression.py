@@ -48,7 +48,11 @@ class LogisticRegression:
     ):
         self.coefficients: np.ndarray = np.array([])
 
-    def fit(self, X: np.ndarray):
+        self.penalty = penalty
+        self.gamma = gamma
+        self.fit_intercept = fit_intercept
+
+    def fit(self, X: np.ndarray, y: np.ndarray):
         pass
 
     def predict(self):

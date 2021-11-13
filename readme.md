@@ -1,6 +1,10 @@
 # Numpy Katas
 
-Exercises to sharp scientific computations with Numpy.
+`numpy-katas` is a growing collection of machine learning and probabilistic models and algorithms
+written exclusively in `NumPy` and the Python `standard library`.
+
+The purpose of the project is to provide reference implementations of common
+machine learning components for sharping your ML skills and cracking interviews.
 
 ## References
 
