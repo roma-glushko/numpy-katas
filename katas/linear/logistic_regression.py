@@ -5,28 +5,7 @@ class LogisticRegression:
     r"""
     A simple logistic regression model fit via gradient descent on the
     penalized negative log likelihood.
-    Notes
-    -----
-    For logistic regression, the penalized negative log likelihood of the
-    targets **y** under the current model is
-    .. math::
-        - \log \mathcal{L}(\mathbf{b}, \mathbf{y}) = -\frac{1}{N} \left[
-            \left(
-                \sum_{i=0}^N y_i \log(\hat{y}_i) +
-                  (1-y_i) \log(1-\hat{y}_i)
-            \right) - R(\mathbf{b}, \gamma)
-        \right]
-    where
-    .. math::
-        R(\mathbf{b}, \gamma) = \left\{
-            \begin{array}{lr}
-                \frac{\gamma}{2} ||\mathbf{beta}||_2^2 & :\texttt{ penalty = 'l2'}\\
-                \gamma ||\beta||_1 & :\texttt{ penalty = 'l1'}
-            \end{array}
-            \right.
-    is a regularization penalty, :math:`\gamma` is a regularization weight,
-    `N` is the number of examples in **y**, and **b** is the vector of model
-    coefficients.
+
     Parameters
     ----------
     penalty : {'l1', 'l2'}
@@ -52,8 +31,8 @@ class LogisticRegression:
         self.gamma = gamma
         self.fit_intercept = fit_intercept
 
-    def fit(self, X: np.ndarray, y: np.ndarray):
+    def fit(self, samples: np.ndarray, targets: np.ndarray):
         pass
 
-    def predict(self):
+    def predict(self, samples: np.ndarray) -> np.ndarray:
         pass

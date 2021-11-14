@@ -2,7 +2,7 @@ import numpy as np
 
 
 class LinearRegression:
-    """
+    r"""
     Implementation of linear regression with SGD optimization
     """
 
@@ -69,17 +69,3 @@ class LinearRegression:
         total_error_square_sum: float = ((targets - targets.mean()) ** 2).sum()
 
         return 1 - (residual_square_sum / total_error_square_sum)
-
-
-if __name__ == "__main__":
-    X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
-    y = X @ np.array([1, 2]) + 3
-
-    linear_regression: LinearRegression = LinearRegression()
-
-    linear_regression.fit(X, y)
-
-    print(linear_regression.coefficients)
-    print(linear_regression.predict(X))
-    print(linear_regression.predict(np.array([[3, 5]])))
-    print(linear_regression.score(X, y))

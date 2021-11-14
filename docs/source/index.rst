@@ -1,4 +1,4 @@
-Numpy-Katas
+Numpy Katas
 ===================
 `numpy-katas`_ is a growing collection of machine learning and probabilistic models and algorithms
 written exclusively in `NumPy`_ and the Python `standard library`_.
@@ -15,5 +15,5 @@ machine learning components for sharping your ML skills and cracking interviews.
    :maxdepth: 3
    :hidden:
 
-   linear_models
+   katas.linear
 
