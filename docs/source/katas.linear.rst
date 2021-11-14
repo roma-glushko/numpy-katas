@@ -52,7 +52,9 @@ ___________________
 A simple logistic regression model fit via gradient descent on the
 penalized negative log likelihood.
 
-For logistic regression, the penalized negative log likelihood of the
+Cost Function
+
+For logistic regression, the cost function is the penalized negative log likelihood (NLL) of the
 targets **y** under the current model is
 
 .. math::
@@ -76,6 +78,16 @@ where:
 is a regularization penalty, :math:`\gamma` is a regularization weight,
 `N` is the number of examples in **y**, and **b** is the vector of model
 coefficients.
+
+Gradient
+
+.. math::
+
+    \text{Gradient} = -\frac{1}{N} \left[
+        \left(
+            \sum_{i=0}^N (y_i - \hat{y}_i) x_i
+        \right) + R(\mathbf{b}, \gamma)
+    \right]
 
 .. toctree::
    :maxdepth: 2
